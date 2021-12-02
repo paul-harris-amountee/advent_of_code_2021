@@ -9,6 +9,8 @@ module AdventOfCode
       end
 
       def add_to_tail(linked_node)
+        return nil unless linked_node.is_a? LinkedNode
+
         if @neighbor.nil?
           @neighbor = linked_node
         else
@@ -38,8 +40,6 @@ module AdventOfCode
 
         @value + tail_result
       end
-
-
 
     end
   end

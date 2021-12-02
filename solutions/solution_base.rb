@@ -17,21 +17,13 @@ module AdventOfCode
       def self.day
         name = self.name
         day_fragment = name[day_index..puzzle_index(name)]
-        case day_fragment
-        when /^One/
-          1
-        end
+        fragment_to_integer(day_fragment)
       end
 
       def self.puzzle
         name = self.name
         puzzle_fragment = name[puzzle_index(name)..name.length]
-        case puzzle_fragment
-        when /^One/
-          1
-        when /^Two/
-          2
-        end
+        fragment_to_integer(puzzle_fragment)
       end
 
       def self.day_index
@@ -40,6 +32,15 @@ module AdventOfCode
 
       def self.puzzle_index(name)
         name.to_s.index(PUZZLE) + PUZZLE.length
+      end
+
+      def self.fragment_to_integer(fragment)
+        case fragment.to_s
+        when /^One/
+          1
+        when /^Two/
+          2
+        end
       end
 
     end

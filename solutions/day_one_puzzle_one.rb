@@ -11,7 +11,7 @@ module AdventOfCode
         head = DataStructures::LinkedNode.new(input[0].to_i)
 
         input[1..input.length].each do |line|
-          head.add_to_tail(DataStructures::LinkedNode.new(line.rstrip.to_i))
+          head.add_to_tail(DataStructures::LinkedNode.new(line.to_i))
         end
 
         head.strictly_greater_neighbor_count
